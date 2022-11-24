@@ -6,11 +6,20 @@
 extern "C" {
 #endif
 
-	JNIEXPORT jobject JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzla_1new
-	(JNIEnv* env, jobject zhis);
+	JNIEXPORT jobject JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaNew
+	(JNIEnv* env, jobject nativeJNI_class);
 
-	JNIEXPORT jobject JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzla_1mk_1true
-	(JNIEnv* env, jobject zhis, jobject bitwuzla);
+	JNIEXPORT void JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaDelete
+	(JNIEnv* env, jobject nativeJNI_class, jobject bitwuzla);
+
+	JNIEXPORT void JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaReset
+	(JNIEnv* env, jobject nativeJNI_class, jobject bitwuzla);
+
+	JNIEXPORT jstring JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaCopyright
+	(JNIEnv* env, jobject nativeJNI_class, jobject bitwuzla);
+
+	JNIEXPORT jobject JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaMkTrue
+	(JNIEnv* env, jobject nativeJNI_class, jobject bitwuzla);
 
 #ifdef __cplusplus
 }

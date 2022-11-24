@@ -7,7 +7,7 @@ project("bitwuzla_jni")
 
 SET(BITBUZLA_INCLUDE_DIR "C:\\repositories\\OpenSource\\bitwuzla\\bitwuzla_jni\\lib\\include")
 SET(BITWUZLA_BIN "C:\\repositories\\OpenSource\\bitwuzla\\bitwuzla_jni\\lib\\bin\\bitwuzla.lib")
-include_directories("c:\\Program Files\\Java\\jdk-17.0.1\\include")
+include_directories("c:\\Program Files\\Java\\jdk-17.0.1\\include") #JAVA_HOME
 include_directories("c:\\Program Files\\Java\\jdk-17.0.1\\include\\win32")
 link_directories("c:\\Program Files\\Java\\jdk-17.0.1\\include")
 link_directories("c:\\Program Files\\Java\\jdk-17.0.1\\include\\win32")
