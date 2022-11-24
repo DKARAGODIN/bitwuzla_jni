@@ -19,5 +19,3 @@ target_link_libraries(bitwuzla_jni PRIVATE ${BITWUZLA_BIN})
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET bitwuzla_jni PROPERTY CXX_STANDARD 20)
 endif()
-
-# TODO: Add tests and install targets if needed.
