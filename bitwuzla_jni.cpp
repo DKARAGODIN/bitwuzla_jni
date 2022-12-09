@@ -718,3 +718,341 @@ jlong Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermGetBitwuzla
         return -1;
     }
 }
+
+jlong Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermGetSort
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        const BitwuzlaSort* bw_sort = bitwuzla_term_get_sort(bw_term);
+        return (jlong)bw_sort;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jlong Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermArrayGetIndexSort
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        const BitwuzlaSort* bw_sort = bitwuzla_term_array_get_index_sort(bw_term);
+        return (jlong)bw_sort;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jlong Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermArrayGetElementSort
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        const BitwuzlaSort* bw_sort = bitwuzla_term_array_get_element_sort(bw_term);
+        return (jlong)bw_sort;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jlong Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermFunGetCodomainSort
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        const BitwuzlaSort* bw_sort = bitwuzla_term_fun_get_codomain_sort(bw_term);
+        return (jlong)bw_sort;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jint Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermBvGetSize
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        uint32_t result = bitwuzla_term_bv_get_size(bw_term);
+        return (jint)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jint Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermFpGetExpSize
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        uint32_t result = bitwuzla_term_fp_get_exp_size(bw_term);
+        return (jint)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jint Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermFpGetSigSize
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        uint32_t result = bitwuzla_term_fp_get_sig_size(bw_term);
+        return (jint)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jint Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermFunGetArity
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        uint32_t result = bitwuzla_term_fun_get_arity(bw_term);
+        return (jint)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jstring Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermGetSymbol
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        const char* c = bitwuzla_term_get_symbol(bw_term);
+        jstring result = env->NewStringUTF(c);
+        return result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return nullptr;
+    }
+}
+
+
+void Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermSetSymbol
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term, jstring symbol) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        const char* native_symbol = env->GetStringUTFChars(symbol, 0);
+        bitwuzla_term_set_symbol(bw_term, native_symbol);
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsEqualSort
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term_1, jlong bitwuzla_term_2) {
+    try {
+        BitwuzlaTerm* bw_term_1 = (BitwuzlaTerm*)bitwuzla_term_1;
+        BitwuzlaTerm* bw_term_2 = (BitwuzlaTerm*)bitwuzla_term_2;
+        bool result = bitwuzla_term_is_equal_sort(bw_term_1, bw_term_2);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsArray
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_array(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsConst
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_const(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsFun
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_fun(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsVar
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_var(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsBoundVar
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_bound_var(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsValue
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_value(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsBvValue
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_bv_value(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsFpValue
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_fp_value(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsRmValue
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_rm_value(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsBv
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_rm_value(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsFp
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_rm_value(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsRm
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_rm_value(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}
+
+jboolean Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsBvValueZero
+(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term) {
+    try {
+        BitwuzlaTerm* bw_term = (BitwuzlaTerm*)bitwuzla_term;
+        bool result = bitwuzla_term_is_rm_value(bw_term);
+        return (jboolean)result;
+    }
+    catch (const std::exception& e) {
+        jclass exception = env->FindClass("org/ksmt/solver/bitwuzla/bindings/BitwuzlaJNIException");
+        env->ThrowNew(exception, e.what());
+        return -1;
+    }
+}

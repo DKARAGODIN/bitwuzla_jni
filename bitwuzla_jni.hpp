@@ -159,6 +159,78 @@ extern "C" {
 	JNIEXPORT jlong JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermGetBitwuzla
 	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
 
+	JNIEXPORT jlong JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermGetSort
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jlong JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermArrayGetIndexSort
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jlong JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermArrayGetElementSort
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jlong JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermFunGetCodomainSort
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jint JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermBvGetSize
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jint JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermFpGetExpSize
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jint JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermFpGetSigSize
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jint JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermFunGetArity
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jstring JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermGetSymbol
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT void JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermSetSymbol
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term, jstring symbol);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsEqualSort
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term_1, jlong bitwuzla_term_2);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsArray
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsConst
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsFun
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsVar
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsBoundVar
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsValue
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsBvValue
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsFpValue
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsRmValue
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsBv
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsFp
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsRm
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
+	JNIEXPORT jboolean JNICALL Java_org_ksmt_solver_bitwuzla_bindings_NativeJNI_bitwuzlaTermIsBvValueZero
+	(JNIEnv* env, jobject nativeJNI_class, jlong bitwuzla_term);
+
 #ifdef __cplusplus
 }
 #endif
